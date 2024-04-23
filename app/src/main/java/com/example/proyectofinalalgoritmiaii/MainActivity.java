@@ -48,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
         // Establecer el OnClickListener para el botón
         botonClear.setOnClickListener(v -> palabraObjetivo.setText(""));
 
-        botonRandom.setOnClickListener(v -> {
-            shuffleButtons(botonesCirculo);
-        });
+        botonRandom.setOnClickListener(v -> shuffleButtons(botonesCirculo));
 
         botonBonus.setOnClickListener(v -> {
             // Crear el AlertDialog.Builder
