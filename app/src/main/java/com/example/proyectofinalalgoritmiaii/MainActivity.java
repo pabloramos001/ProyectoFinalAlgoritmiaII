@@ -91,4 +91,28 @@ public class MainActivity extends AppCompatActivity {
             buttons[index].setText(temp);
         }
     }
+
+    public static boolean esSolución(String palabra1, String palabra2){
+          
+        HashMap mapa = new HashMap <Character,Integer> ();            
+        for(int i=0; i<palabra1.length(); i++){
+            if(mapa.get(palabra1.charAt(i))==null){
+                mapa.put(palabra1.charAt(i), 1);
+            }
+            else{
+               mapa.put(palabra1.charAt(i), ((int) mapa.get(palabra1.charAt(i)))+1);
+            }
+            
+        }
+        for(int i=0;i<palabra2.length(); i++){
+            mapa.put( palabra2.charAt(i), ((int) mapa.get(palabra2.charAt(i)))-1);   
+        }
+        for(int i=0; i<palabra1.length(); i++){
+            if(((int) mapa.get(palabra1.charAt(i)))<0){
+                return false;
+            }
+        }
+        return true;
+        }
+}
 }
